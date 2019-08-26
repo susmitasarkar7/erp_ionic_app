@@ -1,0 +1,56 @@
+<ion-content>
+  <ion-row style="display: flex; justify-content: center; align-items: center;  height: 100%;">
+    <ion-card>
+      <ion-card-content>
+
+        <ion-col align-self-center>
+            <img style="width: 100px; margin: auto;" src="assets/image/logo.png" alt="">
+        </ion-col>
+
+        <form onsubmit="" *ngIf="showEmailForm">
+          <ion-list lines="full" class="ion-no-margin ion-padding">
+            <ion-item>
+              <ion-input required type="email" name="username" [(ngModel)]="userData.email" placeholder="Enter Email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input required type="password" name="password" [(ngModel)]="userData.password" placeholder="Enter Password"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <div class="ion-padding">
+            <ion-button (click)="login()" expand="block" type="submit" class="ion-no-margin">Login
+            </ion-button>
+          </div>
+        </form>
+
+        <form onsubmit="" *ngIf="showPhoneForm">
+          <ion-list lines="full" class="ion-no-margin ion-padding">
+            <ion-item>
+              <ion-input required type="text" name="username" [(ngModel)]="userData.phone_no" placeholder="Enter Phone Number"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input required type="password" name="password" [(ngModel)]="userData.password" placeholder="Enter Password"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <div class="ion-padding">
+            <ion-button (click)="login()" color="success" expand="block" type="submit" class="ion-no-margin">Login
+            </ion-button>
+          </div>
+        </form>
+
+        <div class="ion-padding" *ngIf="emailBtn">
+          <ion-button expand="block" type="submit" class="ion-no-margin" (click)="emailLogin()">Login with Email Id
+          </ion-button>
+        </div>
+        <div class="ion-padding" *ngIf="phoneBtn">
+          <ion-button expand="block" type="submit" color="success" class="ion-no-margin" (click)="phoneLogin()">Login with Phone Number
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+</ion-content>
